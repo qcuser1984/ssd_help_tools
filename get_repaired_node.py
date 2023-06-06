@@ -112,7 +112,11 @@ def main():
     
 
 if __name__ == "__main__":
-    fdnav_file = r"/qc/06-ARAM/nav/Postplot_R/4dnav_lines/BR001522_4dnav.csv"
     digest_file = r"/home/geo2/Public/scr/zdmefr/02_SSD_help_tools/DigestDownloads.csvManual"
-    repair_file = r"/home/geo2/Public/scr/zdmefr/02_SSD_help_tools/Node_165.txt"
-    main()
+    fdnav_file = r"/qc/06-ARAM/nav/Postplot_R/4dnav_lines/BR001522_4dnav.csv"
+    #repair_file = r"/home/geo2/Public/scr/zdmefr/02_SSD_help_tools/Node_165.txt"
+    if len(sys.argv) == 2:
+        repair_file = sys.argv[1] 
+        main()
+    else:
+        print("Please provide full path to repair file")
